@@ -8,26 +8,30 @@
  * Description: sorts the given given array using bubble-sort method
  */
 
-void bubble_sort(int *array, size_t size)
+void bubble_sort(int *input, size_t size)
 {
-  /*declare variables*/
-  int i, temp, swapped;
-  printf("Hello World");
-  printf("%d", *(array + 1));
-  do
-  {
-       swapped = 0;
-       for (i = 1; i < (int)size; )
-       {
-	    if (*(array + i-1) > *(array + i))
-	    {
-		 temp = *(array + i-1);
-		 *(array + i-1) = *(array + i);
-		 *(array + i) = temp;
-		 swapped = 1;
-		 printf("%d,", *(array + 1));
-	    }
-       }
-  }
-  while(!swapped);
+	/*declare variables*/
+	size_t x, y, temp;
+
+	if (size > 1)
+	{
+		x = 1;
+		while (x < size)
+		{
+			y = 1;
+			while (y <= (size - x))
+			{
+				if (input[y - 1] > input[y])
+				{
+					temp = input[y];
+					input[y] = input[y - 1];
+					input[y - 1] = temp;
+					print_array(input, size);
+				}
+
+				++y;
+			}
+			++x;
+		}
+	}
 }

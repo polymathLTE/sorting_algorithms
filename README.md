@@ -21,14 +21,26 @@ Write in the file `0-O`, the big O notations of the time complexity of the Bubbl
 
 #### Algorithm
 
-INPUT:
-unsorted_array: unsorted array
+=========
 
-1.
+**INPUT**:\
+`input`: unsorted array\
+`size`: size of input array
+
+**STEPS**:
+1. IF (size > 1):
+	1. SET x to 1
+	2. WHILE x < (size):
+		1. SET y to 1
+		2. WHILE y <= (size - x):
+			1. IF input[y-1] > input[y]:
+				1. SWAP input[y-1] with input[y]				
+			2. INCREMENT y by 1
+		3. INCREMENT x by 1
 
 ### 1. Insertion sort
 
-Write a function that sorts a doubly linked list of integers in **ascending** order using the Insertion sort algorithm
+Write a function that sort   s a doubly linked list of integers in **ascending** order using the Insertion sort algorithm
 
 -   **Prototype:** `void insertion_sort_list(listint_t \*\*list);`
 -   You are not allowed to modify the integer `n` of a node. You have to swap the nodes themselves.
