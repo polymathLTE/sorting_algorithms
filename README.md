@@ -28,19 +28,22 @@ Write in the file `0-O`, the big O notations of the time complexity of the Bubbl
 `size`: size of input array
 
 **STEPS**:
-1. IF (size > 1):
-	1. SET x to 1
-	2. WHILE x < (size):
-		1. SET y to 1
-		2. WHILE y <= (size - x):
-			1. IF input[y-1] > input[y]:
-				1. SWAP input[y-1] with input[y]				
-			2. INCREMENT y by 1
-		3. INCREMENT x by 1
+
+1. IF `size > 1`:
+    1. SET `x` to `1`
+    2. WHILE `x` < `size`:
+        1. SET `y` to `1`
+        2. WHILE `y <= (size - x)`:
+            1. IF `input[y-1] > input[y]`:
+                1. SWAP `input[y-1]` with input`[y]`
+				2. PRINT `input`
+            2. SET `y` to `y+1`
+        3. INCREMENT `x` by `1`
+2. END
 
 ### 1. Insertion sort
 
-Write a function that sort   s a doubly linked list of integers in **ascending** order using the Insertion sort algorithm
+Write a function that sort s a doubly linked list of integers in **ascending** order using the Insertion sort algorithm
 
 -   **Prototype:** `void insertion_sort_list(listint_t \*\*list);`
 -   You are not allowed to modify the integer `n` of a node. You have to swap the nodes themselves.
@@ -51,6 +54,26 @@ Write in the file `1-O`, the big O notations of the time complexity of the Inser
 -   in the best case
 -   in the average case
 -   in the worst case
+
+**INPUT**:\
+`input`: unsorted array\
+`size`: size of input array
+
+**STEPS**:
+
+1. IF (`size` > `1`):
+    1. SET `i` to `1`
+    2. WHILE `i < size`:
+        1. SET `j` to `i`
+        2. WHILE `j > 0`:
+            1. IF `input[j]` < `input[j-1]`>:
+                1. SWAP `input[j]` with `input[j-1]`
+				2. PRINT `input`
+            2. ELSE:
+                1. BREAK
+            3. SET `j` to `j-1`
+        3. SET `x` to `x+1`
+2. END
 
 ### 2. Selection sort
 
