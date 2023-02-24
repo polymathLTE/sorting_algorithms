@@ -2,7 +2,7 @@
 
 /**
  * bubble_sort - sorting function
- * @array: array pointer
+ * @input: array pointer
  * @size: size the given array
  *
  * Description: sorts the given given array using bubble-sort method
