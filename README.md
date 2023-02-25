@@ -36,7 +36,7 @@ Write in the file `0-O`, the big O notations of the time complexity of the Bubbl
         2. WHILE `y <= (size - x)`:
             1. IF `input[y-1] > input[y]`:
                 1. SWAP `input[y-1]` with input`[y]`
-				2. PRINT `input`
+                2. PRINT `input`
             2. SET `y` to `y+1`
         3. INCREMENT `x` by `1`
 2. END
@@ -68,7 +68,7 @@ Write in the file `1-O`, the big O notations of the time complexity of the Inser
         2. WHILE `j > 0`:
             1. IF `input[j]` < `input[j-1]`>:
                 1. SWAP `input[j]` with `input[j-1]`
-				2. PRINT `input`
+                2. PRINT `input`
             2. ELSE:
                 1. BREAK
             3. SET `j` to `j-1`
@@ -81,6 +81,26 @@ Write a function that sorts an array of integers in **ascending** order using th
 
 -   **Prototype**: `void selection_sort(int \*array, size_t size);`
 -   You’re expected to print the array after each time you swap two elements (See example below)
+
+**INPUT**:\
+`input`: unsorted array\
+`size`: size of input array
+
+**STEPS**:
+
+1. IF (`size` > `1`):
+    1. SET `i` to `0`
+    2. WHILE `i < size`:
+        1. SET `selection` to `input[i]`
+        2. SET `j` to `i + 1`
+        3. WHILE `j<size`:
+            1. IF `selection > input[j]`:
+                1. SWAP `selection` with `input[j]` - Set temp to `input[j]`, then set `input[j]` to `selection` and set `selection` to `temp`
+                2. PRINT `input`
+            2. SET `j` to `j + 1`
+        4. SET `input[i]` to `selection`
+        5. SET `i` to `i+1`
+2. END
 
 Write in the file `2-O`, the big O notations of the time complexity of the Selection sort algorithm, with 1 notation per line:
 
