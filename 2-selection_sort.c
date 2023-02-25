@@ -8,29 +8,34 @@
  */
 void selection_sort(int *input, size_t size)
 {
-	size_t i, j, temp;
-	int selection;
+	size_t i, j, temp, min;
 
 	if (size > 1)
 	{
 		i = 0;
 		while (i < size)
 		{
-			selection = input[i];
+			min = i;
 			j = i + 1;
 
 			while (j < size)
 			{
-				if (selection > input[j])
+				if (input[j] < input[min])
 				{
-					temp = input[j];
-					input[j] = selection;
-					selection = temp;
-					print_array(input, size);
+					min = j;
 				}
 				j++;
 			}
-			input[i] = selection;
+
+			if (min != i)
+			{
+				temp = input[i];
+				input[i] = input[min];
+				input[min] = temp;
+
+				print_array(input, size);
+			}
+
 			i++;
 		}
 	}
