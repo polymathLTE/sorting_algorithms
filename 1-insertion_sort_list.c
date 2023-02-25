@@ -19,27 +19,22 @@ void insertion_sort_list(listint_t **list)
 			j = index;
 			index = index->next;
 
-			while (j->prev)
+			while (j->prev && j->n < j->prev->n)
 			{
-				if (j->n < j->prev->n)
-				{
-					prev = j->prev;
-					next = j->next;
+				prev = j->prev;
+				next = j->next;
 
-					j->prev = j->prev->prev;
-					prev->next = next;
-					prev->prev = j;
-					if (next)
-						next->prev = prev;
-					j->next = prev;
-					if (j->prev)
-						j->prev->next = j;
-					else
-						*list = j;
-					print_list(*list);
-				}
+				j->prev = j->prev->prev;
+				prev->next = next;
+				prev->prev = j;
+				if (next)
+					next->prev = prev;
+				j->next = prev;
+				if (j->prev)
+					j->prev->next = j;
 				else
-					break;
+					*list = j;
+				print_list(*list);
 			}
 		}
 }
