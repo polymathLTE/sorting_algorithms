@@ -91,18 +91,34 @@ Write a function that sorts an array of integers in **ascending** order using th
 1. IF (`size` > `1`):
     1. SET `i` to `0`
     2. WHILE `i < size`:
-        1. SET `selection` to `input[i]`
+        1. SET `min` to `i`
         2. SET `j` to `i + 1`
         3. WHILE `j<size`:
-            1. IF `selection > input[j]`:
-                1. SWAP `selection` with `input[j]` - Set temp to `input[j]`, then set `input[j]` to `selection` and set `selection` to `temp`
-                2. PRINT `input`
+            1. IF `input[min] > input[j]`:
+                1. SET `min` to `j`
             2. SET `j` to `j + 1`
-        4. SET `input[i]` to `selection`
+        4. IF `min` != `i`"
+            1. SWAP `input[min]` with `input[i]` - Set temp to `input[i]`, then set `input[1]` to `input[min]` and set `input[min]` to `temp`
+            2. PRINT `input`
         5. SET `i` to `i+1`
 2. END
 
 Write in the file `2-O`, the big O notations of the time complexity of the Selection sort algorithm, with 1 notation per line:
+
+-   in the best case
+-   in the average case
+-   in the worst case
+
+### 3. Quick sort
+
+Write a function that sorts an array of integers in ascending order using the Quick sort algorithm
+
+-   **Prototype:** `void quick_sort(int \*array, size_t size);`
+-   You must implement the Lomuto partition scheme.
+    -   pivot should always be the last element of the partition being sorted.
+-   You’re expected to print the array after each time you swap two elements (See example below)
+
+Write in the file `3-O`, the big O notations of the time complexity of the Quick sort algorithm, with 1 notation per line:
 
 -   in the best case
 -   in the average case

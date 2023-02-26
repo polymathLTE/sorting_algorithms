@@ -21,9 +21,7 @@ void selection_sort(int *input, size_t size)
 			while (j < size)
 			{
 				if (input[j] < input[min])
-				{
 					min = j;
-				}
 				j++;
 			}
 
